@@ -1,0 +1,26 @@
+page {
+  font-family: PingFangSC-Regular, sans-serif;
+}
+
+view,scroll-view,swiper,swiper-item,movable-area,movable-view,cover-view,cover-image,icon,text,rich-text,progress,button,checkbox-group,checkbox,form,input,label,picker,picker-view,radio-group,radio,slider,switch,textarea,navigator,functional-page-navigator,image,video,camera,live-player,live-pusher,map,canvas,open-data,web-view,ad{
+  box-sizing: border-box;
+}
+
+/*单行溢出省略*/
+.ellipsis {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*两行溢出省略*/
+.ellipsis_2{
+    word-break: break-all;
+    overflow : hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;    /* 数值代表显示几行 */
+    -webkit-box-orient: vertical;
+}
