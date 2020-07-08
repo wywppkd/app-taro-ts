@@ -4,6 +4,7 @@ import { getAuthCode } from '../utils'
 import $http from './http'
 import { Result } from "../interface/Result"
 import { GetToken } from '../interface/GetToken'
+import { PhoneNumberLoginReq } from '../interface/PhoneNumberLogin'
 
 export const getToken = async (): Promise<Result<GetToken>> => {
   const auth_code = await getAuthCode()
@@ -20,7 +21,7 @@ export const getToken = async (): Promise<Result<GetToken>> => {
 }
 
 // 用户手机号登陆
-export const dynamicAuthor = (params): Promise<Result<null>> => {
+export const dynamicAuthor = (params: PhoneNumberLoginReq): Promise<Result<null>> => {
   return $http.post({ url: '/joinUp/dynamicAuthor', data: params, showLoading: false })
 }
 

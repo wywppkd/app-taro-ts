@@ -29,15 +29,19 @@ function Index() {
     dispatch(setTokenAction(token))
   }, [dispatch])
 
-  // 请求
+  // 获取token接口
   const getData = async () => {
     const res = await getToken()
     console.log("getData -> res", res)
   }
 
+  // 登录接口
   const getData2 = async () => {
-    const res = await dynamicAuthor({ iv: "123" })
+    const res = await dynamicAuthor({ encryptedData: "aaa", iv: "bbb" })
     console.log("getData -> res", res)
+    if (res.code === "0000") {
+      // 登录成功
+    }
   }
 
   return (
