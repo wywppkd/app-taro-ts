@@ -4,20 +4,18 @@ import Taro from "@tarojs/taro";
 
 const customInterceptor = (chain) => {
 
+  // 请求拦截器
   const requestParams = chain.requestParams
 
+  // 调用下一个拦截器或发起请求
   return chain.proceed(requestParams).then(res => {
-    if (!requestParams.customLoading) {
-      // 隐藏loading
-      Taro.hideLoading()
-    }
+    // 响应拦截器
 
     // 只要请求成功，不管返回什么状态码，都走这个回调
     if ((res.statusCode >= 200 && res.statusCode < 300) || res.statusCode === 304) {
       // 成功状态码
       if (res.data && res.data.code && res.data.code === "0001") {
         // 登录过期
-        console.log("customInterceptor -> 登录过期")
         Taro.showModal({
           content: '长时间未操作，登录过期',
           showCancel: false

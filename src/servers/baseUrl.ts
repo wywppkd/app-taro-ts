@@ -1,4 +1,4 @@
-const getBaseUrl = () => {
+const getBaseUrl = (): string => {
   let BASE_URL = '';
   if (process.env.NODE_ENV === 'development') {
     // 开发打包

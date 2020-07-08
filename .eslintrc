@@ -48,7 +48,9 @@
     "@typescript-eslint/no-empty-function": [
       "warn"
     ],
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0, // 优先用export default暴露模块
+    "@typescript-eslint/camelcase": 0, // 驼峰命名
+    "@typescript-eslint/no-explicit-any": 0 // ts使用any类型
   },
   "parserOptions": {
     "ecmaFeatures": {

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from '@tarojs/redux';
 import { RootState } from '../../store/index'
 import { loginAction, logoutAction } from '../../store/actions/userActions';
 import { setTokenAction } from '../../store/actions/tokenActions';
-import { getToken } from '../../servers/servers';
+import { getToken, dynamicAuthor } from '../../servers/servers';
 
 import './index.scss'
 
@@ -25,13 +25,18 @@ function Index() {
   }, [dispatch])
 
   // 设置token
-  const dispatchSetToken = useCallback(() => {
-    dispatch(setTokenAction("132123"))
+  const dispatchSetToken = useCallback((token) => {
+    dispatch(setTokenAction(token))
   }, [dispatch])
 
   // 请求
   const getData = async () => {
     const res = await getToken()
+    console.log("getData -> res", res)
+  }
+
+  const getData2 = async () => {
+    const res = await dynamicAuthor({ iv: "123" })
     console.log("getData -> res", res)
   }
 
@@ -42,6 +47,7 @@ function Index() {
       <Button onClick={dispatchLogout}>退出</Button>
       <Button onClick={dispatchSetToken}>设置token{tokenReducer.token}</Button>
       <Button onClick={getData}>请求数据</Button>
+      <Button onClick={getData2}>请求数据2</Button>
     </View>
   );
 }
