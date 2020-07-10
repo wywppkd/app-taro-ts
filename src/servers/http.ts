@@ -32,10 +32,10 @@ type RequestOption = {
  * 约束request入参: 请求方法
  */
 enum Methods {
-  "GET" = "GET",
-  "POST" = "POST",
-  "PUT" = "PUT",
-  "DELETE" = "DELETE",
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE",
 }
 
 /**

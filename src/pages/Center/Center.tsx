@@ -1,7 +1,16 @@
-import Taro from '@tarojs/taro'
+import Taro, { useEffect } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import { getAuthCode, getCurrentPageUrl } from '../../utils'
 
 function Center() {
+  useEffect(() => {
+    const initCenter = async () => {
+      const res = await getAuthCode()
+      console.log("initCenter -> res", res)
+      console.log("initCenter -> getCurrentPageUrl()", getCurrentPageUrl())
+    }
+    initCenter()
+  }, [])
 
   return (
     <View>

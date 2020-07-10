@@ -2,9 +2,9 @@ import Taro from '@tarojs/taro'
 // import HTTPREQUEST from "./http"
 import { getAuthCode } from '../utils'
 import $http from './http'
-import { Result } from "../interface/Result"
-import { GetToken } from '../interface/GetToken'
-import { PhoneNumberLoginReq } from '../interface/PhoneNumberLogin'
+import { Result } from "../schema/Result"
+import { GetToken } from '../schema/GetToken'
+import { PhoneNumberLoginReq } from '../schema/PhoneNumberLogin'
 
 export const getToken = async (): Promise<Result<GetToken>> => {
   const auth_code = await getAuthCode()
