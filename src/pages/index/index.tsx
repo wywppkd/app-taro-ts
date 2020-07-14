@@ -8,7 +8,7 @@ import { getToken, dynamicAuthor } from '../../servers/servers';
 
 import './index.scss'
 
-function Index() {
+const Index: Taro.FC = () => {
 
   // 引入store的state
   const { userReducer, tokenReducer } = useSelector((state: RootState) => state)

@@ -2,7 +2,7 @@ import Taro, { useEffect } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { getAuthCode, getCurrentPageUrl } from '../../utils'
 
-function Center() {
+const Center: Taro.FC = () => {
   useEffect(() => {
     const initCenter = async () => {
       const res = await getAuthCode()
